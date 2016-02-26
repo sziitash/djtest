@@ -1,0 +1,51 @@
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>fpslist</title>
+<mce:style type="text/css">
+<style>
+th {
+	font: bold 11px "trebuchet ms", verdana, arial, helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #c1dad7;
+	border-bottom: 1px solid #c1dad7;
+	border-top: 1px solid #c1dad7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #cae8ea url(images/bg_header.jpg) no-repeat;
+}
+td {
+	border-right: 1px solid #c1dad7;
+	border-bottom: 1px solid #c1dad7;
+	background: #fff;
+	font-size:11px;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+</style>
+</head>
+<body>
+
+<table id="mytable" cellspacing="0" summary="the technical specifications of the apple powermac g5 series">
+  <caption>
+  </caption>
+  <tr>
+	  <th>功能模块</th>
+    <th>测试用例</th>
+	<th>第x次操作</th>
+    <th>最大值</th>
+  </tr>
+	{%for x in listinfo%}
+<tr>
+	<td>{{x.modulename}}</td>
+	<td>{{x.testcase}}</td>
+	<td>{{x.count}}</td>
+	<td>{{x.result}}</td>
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

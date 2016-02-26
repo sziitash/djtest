@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Join us</title>
+</head>
+<body>
+  <h1>Register</h1>
+
+  {% if form.errors %}
+    <p style="color: red;">
+      Please correct the error{{ form.errors|pluralize }} below.
+    </p>
+  {% endif %}
+  {% for item in error %}
+    <p style="color:red;">{{item}}</p>
+  {% endfor %}
+
+  <form action="" method="post">
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="注册">
+  </form>
+</body>
+</html>

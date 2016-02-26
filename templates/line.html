@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FPS测试结果</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/default.css">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+		</header>
+		<div class="htmleaf-content">
+			<div style="width:30%;margin:0 auto;">
+			<div>
+				<canvas id="canvas" height="450" width="600"></canvas>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script src="/static/js/Chart.js"></script>
+	<script>
+	var lista = new Array();
+	{%for x in listinfo%}
+	lista.push({{x.Max}})
+	{%endfor%}
+	//var randomScalingFactor = function(){ return Math.round(Math.random()*60)};
+		var lineChartData = {
+			labels : ["第一次","第二次","第三次","第四次","第五次","第六次","第七次","第八次","第九次","第十次"],
+			datasets : [
+				{
+					label: "最大值统计",
+					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data : lista
+				}
+			]
+
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx).Line(lineChartData, {
+			responsive: true
+		});
+	}
+	</script>
+</body>
+</html>

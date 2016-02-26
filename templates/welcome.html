@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>欢迎您</title>
+</head>
+<body>
+    <h1>欢迎您 {{user}}!</h1>
+    <div>
+     <a href="/account/changepassword/{{user}}">更改密码</a>
+     <a href="/account/logout">注销</a>
+        <a href="/account/delplayer/{{namelist.name}}">删除球员</a>
+        <a href="/account/fpstest">fps测试结果</a>
+    </div>
+
+<!--select>
+  <option value ="1">{{namelist.name}}</option>
+</select-->
+
+<p>最后一名球员：{{namelist.name}}</p>
+
+</body>
+</html>

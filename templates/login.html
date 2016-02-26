@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>登录</title>
+</head>
+<body>
+  <h1>登录</h1>
+  {% for item in error %}
+    <p style="color:red;">{{item}}</p>
+  {% endfor %}
+
+  <form action="" method="post">
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="登录">
+    </form>
+
+  <!--form action="/account/register/" method="get">
+    <input type="submit" value="注册账号">
+    </form-->
+
+
+<a href="/account/register/">注册新账号</a>
+</body>
+</html>
